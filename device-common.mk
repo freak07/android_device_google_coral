@@ -66,14 +66,6 @@ persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.vendor.bt.aac_frm_ctl.enabled=true
 
-# Set lmkd options
-PRODUCT_PRODUCT_PROPERTIES += \
-	ro.config.low_ram = false \
-	ro.lmk.kill_heaviest_task = true \
-	ro.lmk.kill_timeout_ms = 100 \
-	ro.lmk.use_minfree_levels = true \
-	ro.lmk.log_stats = true \
-
 # Modem logging file
 PRODUCT_COPY_FILES += \
     device/google/coral/init.logging.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.$(PRODUCT_PLATFORM).logging.rc
