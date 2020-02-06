@@ -51,7 +51,7 @@
     <bool name="config_displayWhiteBalanceEnabledDefault">true</bool>
 
     <!-- Minimum color temperature, in Kelvin, supported by display white balance. -->
-    <integer name="config_displayWhiteBalanceColorTemperatureMin">6300</integer>
+    <integer name="config_displayWhiteBalanceColorTemperatureMin">5388</integer>
 
     <!-- Maximum color temperature, in Kelvin, supported by display white balance. -->
     <integer name="config_displayWhiteBalanceColorTemperatureMax">7450</integer>
@@ -71,12 +71,12 @@
     <!-- See DisplayWhiteBalanceThrottler.
          The debounce time (in milliseconds) for increasing the screen color temperature, throttled
          if time > lastTime + debounce. Must be non-negative. -->
-    <integer name="config_displayWhiteBalanceIncreaseDebounce">2000</integer>
+    <integer name="config_displayWhiteBalanceIncreaseDebounce">3000</integer>
 
     <!-- See DisplayWhiteBalanceThrottler.
          The debounce time (in milliseconds) for decreasing the screen color tempearture, throttled
          if time < lastTime - debounce. Must be non-negative. -->
-    <integer name="config_displayWhiteBalanceDecreaseDebounce">3000</integer>
+    <integer name="config_displayWhiteBalanceDecreaseDebounce">4000</integer>
 
     <!-- See DisplayWhiteBalanceThrottler.
          The ambient color temperature values used to determine the threshold as the corresponding
@@ -100,10 +100,11 @@
          - If 100 <= Y < 1000, we require Y < (1 - 0.05) * X = 0.95X;
          - If 1000 <= Y, we require Y < (1 - 0) * X = X. -->
     <array name="config_displayWhiteBalanceBaseThresholds">
-        <item>6300</item>
-        <item>6400</item>
+        <item>5388</item>
+        <item>6404</item>
+        <item>6700</item>
         <item>6850</item>
-        <item>7450</item>
+        <item>7450</item>>
     </array>
 
     <!-- See DisplayWhiteBalanceThrottler.
@@ -111,9 +112,10 @@
          non-empty, the same length as config_displayWhiteBalanceBaseThresholds, and contain
          non-negative numbers. -->
     <array name="config_displayWhiteBalanceIncreaseThresholds">
-        <item>0.0078740</item>
+        <item>0.008</item>
+        <item>0.0076981</item>
         <item>0.0075472</item>
-        <item>0.0069930</item>
+        <item>0.006993</item>
         <item>0.0067114</item>
     </array>
 
@@ -122,9 +124,10 @@
          non-empty, the same length as config_displayWhiteBalanceBaseThresholds, and contain
          non-negative numbers. -->
     <array name="config_displayWhiteBalanceDecreaseThresholds">
-        <item>0.0078740</item>
+        <item>0.008</item>
+        <item>0.0076981</item>
         <item>0.0075472</item>
-        <item>0.0069930</item>
+        <item>0.006993</item>
         <item>0.0067114</item>
     </array>
 
@@ -139,8 +142,8 @@
          1) Contain at least two entries
          2) Be the same length as config_displayWhiteBalanceLowLightAmbientBiases. -->
     <array name ="config_displayWhiteBalanceLowLightAmbientBrightnesses">
-        <item>10.0</item>
-        <item>50.0</item>
+        <item>5.0</item>
+        <item>5.0</item>
     </array>
 
     <!-- See DisplayWhiteBalanceController.
@@ -156,7 +159,7 @@
          The ambient color temperature (in cct) to which we interpolates towards to when the
          ambient brightness is within the low light range, see
          config_displayWhiteBalanceLowLightAmbientBrightnesses. -->
-    <item name="config_displayWhiteBalanceLowLightAmbientColorTemperature" format="float" type="dimen">6300.0</item>
+    <item name="config_displayWhiteBalanceLowLightAmbientColorTemperature" format="float" type="dimen">5388.0</item>
 
     <!-- See DisplayWhiteBalanceController.
          A float array containing a list of ambient brightnesses, in Lux. This array,
@@ -197,7 +200,8 @@
          1) Contain at least two entries
          2) Be the same length as config_displayWhiteBalanceDisplayColorTemperatures. -->
     <array name="config_displayWhiteBalanceAmbientColorTemperatures">
-        <item>5300</item>
+        <item>3000</item>
+        <item>5000</item>
         <item>6000</item>
         <item>7000</item>
         <item>8000</item>
@@ -208,8 +212,9 @@
          config_displayWhiteBalanceAmbientColorTemperatures for additional details.
          The same restrictions apply to this array. -->
     <array name="config_displayWhiteBalanceDisplayColorTemperatures">
-        <item>6300</item>
-        <item>6400</item>
+        <item>5388</item>
+        <item>6404</item>
+        <item>6700</item>
         <item>6850</item>
         <item>7450</item>
     </array>
